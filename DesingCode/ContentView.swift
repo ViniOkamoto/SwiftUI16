@@ -5,84 +5,76 @@
 //  Created by Vinicius Okamoto on 2023-08-09.
 //
 
-import SwiftUI
 import CoreData
+import SwiftUI
 
 struct ContentView: View {
-    @Environment(\.managedObjectContext) private var viewContext
-
-    @FetchRequest(
-        sortDescriptors: [NSSortDescriptor(keyPath: \Item.timestamp, ascending: true)],
-        animation: .default)
-    private var items: FetchedResults<Item>
-
     var body: some View {
-        NavigationView {
-            List {
-                ForEach(items) { item in
-                    NavigationLink {
-                        Text("Item at \(item.timestamp!, formatter: itemFormatter)")
-                    } label: {
-                        Text(item.timestamp!, formatter: itemFormatter)
-                    }
-                }
-                .onDelete(perform: deleteItems)
+        VStack(alignment: .center, spacing: 16.0) {
+            Image(systemName: "timelapse", variableValue: 0.25)
+                .foregroundColor(Color("AccentColor"))
+                .imageScale(.large)
+                .font(.system(size: 50))
+                .fontWeight(.thin)
+            Text("Switching Apps".uppercased())
+                .font(.largeTitle.width(.condensed))
+                .fontWeight(.bold)
+            Text("Tap and hold any part of the screen for 1 second to show the menu for switching between apps.")
+                .multilineTextAlignment(.center)
+                .foregroundColor(.secondary)
+                .fontWeight(.medium)
+            Button {} label: {
+                Text("Got It!")
+                    .padding(.all)
+                    .frame(maxWidth: .infinity)
+                    .background(.white.opacity(0.2).gradient)
+                    .cornerRadius(10)
+                    .background(
+                        RoundedRectangle(cornerRadius: 10)
+                            .stroke()
+                            .foregroundStyle(
+                                .linearGradient(
+                                    colors: [
+                                        .white.opacity(0.5),
+                                        .clear,
+                                        .white.opacity(0.5), .clear,
+                                    ],
+                                    startPoint: .topLeading,
+                                    endPoint: .bottomTrailing
+                                )
+                            )
+                    )
             }
-            .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    EditButton()
-                }
-                ToolbarItem {
-                    Button(action: addItem) {
-                        Label("Add Item", systemImage: "plus")
-                    }
-                }
-            }
-            Text("Select an item")
+            .accentColor(.primary)
+            .shadow(radius: 10)
         }
-    }
-
-    private func addItem() {
-        withAnimation {
-            let newItem = Item(context: viewContext)
-            newItem.timestamp = Date()
-
-            do {
-                try viewContext.save()
-            } catch {
-                // Replace this implementation with code to handle the error appropriately.
-                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-                let nsError = error as NSError
-                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
-            }
-        }
-    }
-
-    private func deleteItems(offsets: IndexSet) {
-        withAnimation {
-            offsets.map { items[$0] }.forEach(viewContext.delete)
-
-            do {
-                try viewContext.save()
-            } catch {
-                // Replace this implementation with code to handle the error appropriately.
-                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-                let nsError = error as NSError
-                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
-            }
-        }
+        .padding(30)
+        .background(.regularMaterial)
+        .cornerRadius(10)
+        .background(
+            RoundedRectangle(cornerRadius: 10)
+                .stroke()
+                .foregroundStyle(
+                    .linearGradient(
+                        colors: [
+                            .white.opacity(0.5),
+                            .clear,
+                            .white.opacity(0.5), .clear,
+                        ],
+                        startPoint: .topLeading,
+                        endPoint: .bottomTrailing
+                    )
+                )
+        )
+        .shadow(color: .black.opacity(0.3), radius: 20, y: 20)
+        .frame(maxWidth: 500)
+        .padding(10)
+        .dynamicTypeSize(.xSmall ... .xxxLarge)
     }
 }
 
-private let itemFormatter: DateFormatter = {
-    let formatter = DateFormatter()
-    formatter.dateStyle = .short
-    formatter.timeStyle = .medium
-    return formatter
-}()
-
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
+        ContentView().background(Image("Wallpaper 3"))
     }
 }
