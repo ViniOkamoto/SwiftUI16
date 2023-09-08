@@ -16,6 +16,11 @@
 		8DE6DEE92A96829A00398EC4 /* MessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DE6DEE82A96829A00398EC4 /* MessageView.swift */; };
 		8DE6DEEB2A96856500398EC4 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DE6DEEA2A96856500398EC4 /* MenuView.swift */; };
 		8DE6DEED2A96B32C00398EC4 /* ChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DE6DEEC2A96B32B00398EC4 /* ChartView.swift */; };
+		8DE6DEF42A96B92D00398EC4 /* GridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DE6DEF32A96B92D00398EC4 /* GridView.swift */; };
+		8DE6DEF72A96BE6500398EC4 /* HexagonShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DE6DEF62A96BE6500398EC4 /* HexagonShape.swift */; };
+		8DE6DEF92A96BF8F00398EC4 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DE6DEF82A96BF8F00398EC4 /* CardView.swift */; };
+		8DE6DEFB2A96C3D000398EC4 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DE6DEFA2A96C3D000398EC4 /* DetailView.swift */; };
+		8DE6DEFD2A96C70300398EC4 /* RadialLayoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DE6DEFC2A96C70300398EC4 /* RadialLayoutView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +34,11 @@
 		8DE6DEE82A96829A00398EC4 /* MessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageView.swift; sourceTree = "<group>"; };
 		8DE6DEEA2A96856500398EC4 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
 		8DE6DEEC2A96B32B00398EC4 /* ChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartView.swift; sourceTree = "<group>"; };
+		8DE6DEF32A96B92D00398EC4 /* GridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridView.swift; sourceTree = "<group>"; };
+		8DE6DEF62A96BE6500398EC4 /* HexagonShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HexagonShape.swift; sourceTree = "<group>"; };
+		8DE6DEF82A96BF8F00398EC4 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		8DE6DEFA2A96C3D000398EC4 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		8DE6DEFC2A96C70300398EC4 /* RadialLayoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadialLayoutView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +90,7 @@
 		8DE6DEEE2A96B33800398EC4 /* app */ = {
 			isa = PBXGroup;
 			children = (
+				8DE6DEF52A96BE5600398EC4 /* components */,
 				8DE6DEF12A96B36400398EC4 /* core */,
 				8DE6DEF02A96B34E00398EC4 /* views */,
 			);
@@ -90,10 +101,12 @@
 			isa = PBXGroup;
 			children = (
 				8D0BC9352A83C08F00795A9E /* ContentView.swift */,
-				8DE6DEEA2A96856500398EC4 /* MenuView.swift */,
+				8DE6DEFC2A96C70300398EC4 /* RadialLayoutView.swift */,
 				8DE6DEE82A96829A00398EC4 /* MessageView.swift */,
 				8D0BC9A52A85CEBB00795A9E /* NavigationStackView.swift */,
-				8DE6DEEC2A96B32B00398EC4 /* ChartView.swift */,
+				8DE6DEF32A96B92D00398EC4 /* GridView.swift */,
+				8DE6DEF82A96BF8F00398EC4 /* CardView.swift */,
+				8DE6DEFA2A96C3D000398EC4 /* DetailView.swift */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -112,6 +125,16 @@
 				8DE6DEE62A9551AE00398EC4 /* Data.swift */,
 			);
 			path = utils;
+			sourceTree = "<group>";
+		};
+		8DE6DEF52A96BE5600398EC4 /* components */ = {
+			isa = PBXGroup;
+			children = (
+				8DE6DEEA2A96856500398EC4 /* MenuView.swift */,
+				8DE6DEEC2A96B32B00398EC4 /* ChartView.swift */,
+				8DE6DEF62A96BE6500398EC4 /* HexagonShape.swift */,
+			);
+			path = components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -184,10 +207,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8DE6DEF72A96BE6500398EC4 /* HexagonShape.swift in Sources */,
 				8D0BC9362A83C08F00795A9E /* ContentView.swift in Sources */,
 				8DE6DEEB2A96856500398EC4 /* MenuView.swift in Sources */,
+				8DE6DEF42A96B92D00398EC4 /* GridView.swift in Sources */,
+				8DE6DEF92A96BF8F00398EC4 /* CardView.swift in Sources */,
+				8DE6DEFB2A96C3D000398EC4 /* DetailView.swift in Sources */,
 				8D0BC9A62A85CEBB00795A9E /* NavigationStackView.swift in Sources */,
 				8DE6DEED2A96B32C00398EC4 /* ChartView.swift in Sources */,
+				8DE6DEFD2A96C70300398EC4 /* RadialLayoutView.swift in Sources */,
 				8D0BC9342A83C08F00795A9E /* DesingCodeApp.swift in Sources */,
 				8DE6DEE72A9551AE00398EC4 /* Data.swift in Sources */,
 				8DE6DEE92A96829A00398EC4 /* MessageView.swift in Sources */,
